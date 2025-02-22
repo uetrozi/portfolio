@@ -17,7 +17,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-100 text-gray-900">
         <Navbar />
-        <main className="max-w-4xl mx-auto p-6">{children}</main>
+        <main className="pt-16">{children}</main>{" "}
+        {/* Push content down to avoid navbar overlap */}
       </body>
     </html>
   );
