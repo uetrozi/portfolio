@@ -1,11 +1,6 @@
 "use client";
-import { useRef } from "react";
 
 export default function Navbar() {
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
