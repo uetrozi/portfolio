@@ -14,7 +14,7 @@ export default function HomePage() {
         {/* Hero Image - Grayscale */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="../public/charlotte.jpg"
+            src="/charlotte.jpg"
             alt="Hero"
             layout="fill"
             objectFit="cover"
