@@ -14,7 +14,7 @@ export default function HomePage() {
         {/* Hero Image - Grayscale */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/public/Nami%202022%2007%2008--154.jpg" // Update with actual image path
+            src="/../public/Nami%202022%2007%2008--154.jpg"
             alt="Hero"
             layout="fill"
             objectFit="cover"
