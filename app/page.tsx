@@ -16,7 +16,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
           {/* Dark overlay */}
           <Image
-            src="/public/Nami%202022%2007%2008--154.jpg"
+            src="/charlotte.jpg"
             alt="Hero"
             layout="fill"
             objectFit="cover"
