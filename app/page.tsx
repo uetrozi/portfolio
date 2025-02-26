@@ -9,23 +9,29 @@ export default function HomePage() {
 
   return (
     <main className="bg-[#F2F9FF] text-gray-900">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
-        {/* Hero Image - Grayscale */}
-        <div className="absolute inset-0 z-0">
+      {/* Parallax Hero Section */}
+      <section className="relative h-screen flex items-center justify-end pr-16 overflow-hidden">
+        {/* Parallax Background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
+          {/* Dark overlay */}
           <Image
-            src="/charlotte.jpg"
+            src="/public/Nami%202022%2007%2008--154.jpg"
             alt="Hero"
             layout="fill"
             objectFit="cover"
-            className="grayscale opacity-80"
+            className="opacity-80 object-left"
+            style={{
+              transform: "translateY(-10%)",
+              transition: "transform 0.2s ease-out",
+            }}
           />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 text-center">
+        {/* Hero Content (Shifted Right) */}
+        <div className="relative z-10 text-right max-w-lg">
           <h1 className="text-5xl font-bold mb-6">Welcome to My Portfolio</h1>
-          <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto">
+          <p className="text-lg text-gray-700 mb-8">
             A Frontend Engineer passionate about building modern and engaging
             web experiences.
           </p>
