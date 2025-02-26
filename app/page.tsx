@@ -1,5 +1,6 @@
 "use client"; // Enables client-side interactivity
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function HomePage() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -11,14 +12,30 @@ export default function HomePage() {
   };
 
   return (
-    <section className="text-center py-10">
-      {/* Hero Section */}
-      <div className="h-screen flex flex-col justify-center">
-        <h1 className="text-4xl font-bold">Hello, I am Charlotte 👋</h1>
-        <p className="text-lg text-gray-600 mt-4">
-          A Frontend Engineer passionate about modern, performant web
-          applications.
+    <section className="min-h-screen flex items-center justify-center bg-[#F2F9FF] relative">
+      {/* Hero Image - Grayscale */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="public/Nami%202022%2007%2008--154.jpg"
+          alt="Hero"
+          layout="fill"
+          objectFit="cover"
+          className="grayscale opacity-80"
+        />
+      </div>
+
+      {/* Hero Content */}
+      <div className="relative z-10 text-center text-gray-900">
+        <h1 className="text-5xl font-bold mb-6">Welcome to My Portfolio</h1>
+        <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto">
+          A Frontend Engineer passionate about building modern and engaging web
+          experiences.
         </p>
+        <a href="#contact">
+          <button className="px-6 py-3 bg-[#E195AB] text-white rounded-full shadow-lg hover:bg-[#FFCCE1] transition duration-300">
+            Get in Touch
+          </button>
+        </a>
         <div className="mt-6 space-x-4">
           <button
             onClick={() => scrollToSection(aboutRef)}
