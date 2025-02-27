@@ -1,16 +1,26 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function HomePage() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  // Handle scrolling effect for parallax
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <main className="bg-[#F2F9FF] text-gray-900">
       {/* Parallax Hero Section */}
-      <section className="relative h-screen flex items-center justify-end pr-16 overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center md:justify-end px-6 md:pr-16 overflow-hidden">
         {/* Parallax Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
@@ -20,17 +30,17 @@ export default function HomePage() {
             alt="Hero"
             layout="fill"
             objectFit="cover"
-            className="opacity-80 object-left"
+            className="opacity-80 object-left w-full h-full"
             style={{
-              transform: "translateY(-10%)",
-              transition: "transform 0.2s ease-out",
+              transform: `translateY(${scrollY * 0.3}px)`, // Parallax Effect
+              transition: "transform 0.1s ease-out",
             }}
           />
         </div>
 
         {/* Hero Content (Shifted Right) */}
-        <div className="relative z-10 text-right max-w-lg">
-          <h1 className="text-5xl font-bold mb-6">Welcome to My Portfolio</h1>
+        <div className="relative z-10 text-center md:text-right max-w-lg">
+          <h1 className="text-5xl font-bold mb-6">Hi, I am Charlotte.</h1>
           <p className="text-lg text-gray-700 mb-8">
             A Frontend Engineer passionate about building modern and engaging
             web experiences.
