@@ -6,21 +6,23 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md py-4">
-      <div className="max-w-4xl mx-auto flex justify-between px-6">
-        <h1 className="text-xl font-semibold">Charlotte Keuer</h1>
-        <ul className="flex space-x-6">
-          <li>
-            <button onClick={() => scrollToSection("about")}>About</button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection("projects")}>
-              Projects
-            </button>
-          </li>
-          <li>
-            <button onClick={() => scrollToSection("contact")}>Contact</button>
-          </li>
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50 inset-x-0">
+      <div className="max-w-6xl mx-auto flex justify-between items-center px-16 py-3">
+        {/* Logo / Name */}
+        <h1 className="text-lg font-semibold tracking-wide">Charlotte Keuer</h1>
+
+        {/* Navigation Links */}
+        <ul className="flex space-x-8">
+          {["about", "projects", "contact"].map((section) => (
+            <li key={section}>
+              <button
+                onClick={() => scrollToSection(section)}
+                className="text-gray-700 hover:text-gray-900 transition-colors text-base font-medium"
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

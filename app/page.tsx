@@ -22,7 +22,7 @@ export default function HomePage() {
       {/* Parallax Hero Section */}
       <section className="relative h-screen flex items-center justify-center md:justify-end px-6 md:pr-16 overflow-hidden">
         {/* Parallax Background */}
-        <div className="absolute inset-0">
+        
           <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
           {/* Dark overlay */}
           <Image
@@ -36,12 +36,12 @@ export default function HomePage() {
               transition: "transform 0.1s ease-out",
             }}
           />
-        </div>
+        
 
         {/* Hero Content (Shifted Right) */}
-        <div className="relative z-10 text-center md:text-right max-w-lg">
+        <div className="relative z-10 text-center md:text-right max-w-[450px] w-fit">
           <h1 className="text-5xl font-bold mb-6">Hi, I am Charlotte.</h1>
-          <p className="text-lg text-gray-700 mb-8">
+          <p className="text-lg text-gray-800 mb-8 glow">
             A Frontend Engineer passionate about building modern and engaging
             web experiences.
           </p>
